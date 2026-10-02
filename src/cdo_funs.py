@@ -12,7 +12,7 @@ def bond_cash_flows(default_quarter, face=10.0, coupon_rate=0.06, LGD=0.60,
     Quarterly cash flows of ONE bond (in $MM).
     default_quarter: 1..n_quarters = quarter of default, 0 = no default.
  
-    Rule (§5.4):
+    Rule:
         before default   -> coupon
         default quarter  -> recovery = face * (1 - LGD), no coupon
         after default    -> 0
@@ -30,10 +30,10 @@ def bond_cash_flows(default_quarter, face=10.0, coupon_rate=0.06, LGD=0.60,
             if q == n_quarters:                     # maturity: add principal
                 cf[i] += face
  
-        elif q < default_quarter:                   # before default
+        elif q <= default_quarter:                   # before default
             cf[i] = coupon
  
-        elif q == default_quarter:                  # default quarter
+        elif q == default_quarter+1:                  # default quarter
             cf[i] = recovery
  
         # after default: stays 0
@@ -62,3 +62,15 @@ def all_bond_cash_flows(default_q, face=10.0, coupon_rate=0.06, LGD=0.60,
 def portfolio_cash_flows(bond_cf):
     """Sum across the bonds: returns shape (n_cases, n_quarters)."""
     return bond_cf.sum(axis=1)
+
+
+def bond_cash_flows_Class(face, coupon_rate, n_quarters=20):
+    coupon = face * coupon_rate / 4
+    cf = np.zeros(n_quarters)
+ 
+    for q in range(1, n_quarters + 1):
+        i = q - 1                                   # Python index starts at 0
+        cf[i] = coupon
+        if q == n_quarters:                     # maturity: add principal
+            cf[i] += face
+    return cf
