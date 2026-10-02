@@ -1,6 +1,6 @@
-# U.S. Treasury Zero-Coupon Yield Curve
+# Credit Default Swap | Structured Finance
 
-Academic project for constructing a zero-coupon yield curve from U.S. Treasury note and bond prices.
+
 
 ## Status
 
