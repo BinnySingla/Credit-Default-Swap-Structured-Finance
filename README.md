@@ -1,4 +1,4 @@
-# Credit Default Swap | Structured Finance
+# Collateralized Debt Obligation | Structured Finance
 # Simplified CDO Analysis: Correlated Defaults and Tranche Cash Flows
 
 Monte Carlo simulation of a collateralized debt obligation (CDO) backed by 10 speculative-grade corporate bonds. The model generates correlated default times with a Gaussian copula, builds quarterly collateral cash flows, and distributes them through a two-tranche waterfall.
