@@ -1,6 +1,6 @@
 # Collateralized Debt Obligation | Structured Finance
-Mini-Project 3, Valuation for Financial Engineering
-Team: Jiayi Chen, Binny Singla
+# Mini-Project 3 | Valuation for Financial Engineering
+# Team: Jiayi Chen, Binny Singla
 
 # Simplified CDO Analysis: Correlated Defaults and Tranche Cash Flows
 
